@@ -5,13 +5,14 @@
 
     Test your code below
     <form method="post">
-        <textarea name="code" rows="25" cols="150">
-
+        <textarea id="code-area" name="code" rows="10" cols="150">
+            <?php
+                echo '1' + 5;
         </textarea>
 
-        <button type="button" class="btn btn-success">RUN</button>
+        <button type="button" id="run-button" class="btn btn-success">RUN</button>
     </form>
-    <div class="result">
+    <div id="result-area" class="result">
 
     </div>
 {% endblock body %}
