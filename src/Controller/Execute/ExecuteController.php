@@ -8,6 +8,7 @@
 
 namespace App\Controller\Execute;
 
+use App\Services\FileManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,11 +24,16 @@ class ExecuteController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      * @throws \Exception
      */
-    public function execute(Request $request)
+    public function execute(Request $request, FileManager $fileManager)
     {
-
         $code = $request->request->get('code');
-        
+
+        $filepath = $fileManager->run($code);
+        $fileManager->delete($filepath);
+
+        // execute
+//        $fileManager->delete();
+
         return new JsonResponse($code);
 
     }
