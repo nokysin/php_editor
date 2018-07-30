@@ -29,10 +29,13 @@ class ExecuteController extends AbstractController
         $code = $request->request->get('code');
 
         $filepath = $fileManager->run($code);
-        $fileManager->delete($filepath);
 
         // execute
-//        $fileManager->delete();
+
+        $fileManager->delete($filepath);
+
+
+
 
         return new JsonResponse($code);
 
