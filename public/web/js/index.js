@@ -11,7 +11,7 @@ $(document).ready(function () {
 
         if (codeArea && codeArea.text().length > 0) {
 
-            const data = { 'code' : JSON.stringify(codeArea.text()) };
+            const data = { 'code' : codeArea.text() };
 
             $.ajax({
                 method: "POST",
