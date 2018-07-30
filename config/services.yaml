@@ -36,3 +36,8 @@ services:
     App\Services\FileManager:
         arguments:
             $fileSystem: '@filesystem'
+
+    App\Services\CodeExecutor:
+        arguments:
+            $fileSystem: '@filesystem'
+
