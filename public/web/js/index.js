@@ -11,16 +11,13 @@ $(document).ready(function () {
 
         if (codeArea && codeArea.text().length > 0) {
 
-            var code = codeArea.text();
-            code = JSON.stringify({code: code});
-            console.log('code ', code);
+            const data = { 'code' : JSON.stringify(codeArea.text()) };
 
             $.ajax({
                 method: "POST",
                 url: "execute",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                data: code
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                data: data,
             }).done(function (result) {
                 $(resultArea).text(result);
             });
