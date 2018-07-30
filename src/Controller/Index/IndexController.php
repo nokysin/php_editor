@@ -19,15 +19,9 @@ class IndexController extends AbstractController
 {
     /**
      * @return \Symfony\Component\HttpFoundation\Response
-     * @throws \Exception
      */
     public function index()
     {
-        $number = random_int(0, 100);
-
-        return $this->render('index.html.twig');
-//        return new Response(
-//            '<html><body>Lucky number: '.$number.'</body></html>'
-//        );
+        return $this->render('Index/index.html.twig');
     }
 }

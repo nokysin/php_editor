@@ -26,11 +26,9 @@ class ExecuteController extends AbstractController
     public function execute(Request $request)
     {
 
-        $code = $request->request;
-
-
-
-        return new JsonResponse($number);
+        $code = $request->request->get('code');
+        
+        return new JsonResponse($code);
 
     }
 }
